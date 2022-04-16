@@ -7,6 +7,10 @@ const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
 const textBox = document.getElementById('text-box');
 
+// Set Variables
+const DARK_THEME = 'dark';
+const LIGHT_THEME = 'light';
+
 // Dark or Light Images
 function imageMode(color) {
 	image1.src = `img/undraw_proud_coder_${color}.svg`;
@@ -16,8 +20,8 @@ function imageMode(color) {
 
 function toggleDarkLightMode(isDark) {
 	isDark
-		? document.documentElement.setAttribute('data-theme', 'dark')
-		: document.documentElement.setAttribute('data-theme', 'light');
+		? document.documentElement.setAttribute('data-theme', DARK_THEME)
+		: document.documentElement.setAttribute('data-theme', LIGHT_THEME);
 	nav.style.backgroundColor = isDark ? 'rgb(0 0 0 / 50%)' : 'rgb(0 0 0 / 50%)';
 	textBox.style.backgroundColor = isDark
 		? 'rgb(255 255 255 / 50%)'
@@ -26,10 +30,10 @@ function toggleDarkLightMode(isDark) {
 	isDark
 		? toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon')
 		: toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
-	isDark ? imageMode('dark') : imageMode('light');
+	isDark ? imageMode(DARK_THEME) : imageMode(LIGHT_THEME);
 	isDark
-		? localStorage.setItem('theme', 'dark')
-		: localStorage.setItem('theme', 'light');
+		? localStorage.setItem('theme', DARK_THEME)
+		: localStorage.setItem('theme', LIGHT_THEME);
 }
 
 // Switch Theme Dynamically
