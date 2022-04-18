@@ -1,11 +1,9 @@
 // Select Elements
 const toggleSwitch = document.getElementById('checkbox');
-const nav = document.getElementById('nav');
 const toggleIcon = document.getElementById('toggle-icon');
 const image1 = document.getElementById('image1');
 const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
-const textBox = document.getElementById('text-box');
 
 // Set Variables
 const DARK_THEME = 'dark';
@@ -22,10 +20,6 @@ function toggleDarkLightMode(isDark) {
 	isDark
 		? document.documentElement.setAttribute('data-theme', DARK_THEME)
 		: document.documentElement.setAttribute('data-theme', LIGHT_THEME);
-	nav.style.backgroundColor = isDark ? 'rgb(0 0 0 / 50%)' : 'rgb(0 0 0 / 50%)';
-	textBox.style.backgroundColor = isDark
-		? 'rgb(255 255 255 / 50%)'
-		: 'rgb(255 255 255 / 50%)';
 	toggleIcon.children[0].textContent = isDark ? 'Dark Mode' : 'lightMode';
 	isDark
 		? toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon')
